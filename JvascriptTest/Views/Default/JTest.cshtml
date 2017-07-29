@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>JTest</title>
+    <script src="~/Scripts/jquery-3.1.0.js"></script>
+    <script type="text/javascript">
+        
+        function f1()
+        {
+            var box1stHtml = "";
+            box1stHtml = "<div>";
+            box1stHtml += "                <label id=\"lblName\" for=\"Name\">";
+            box1stHtml += "                    <span style=\"width:500px;\">Name:</span>";
+            box1stHtml += "                      </label>";
+            box1stHtml += "            </div>";
+            box1stHtml += "            <div>";
+            box1stHtml += "                <label id=\"lblPhone\" for=\"Phone\">";
+            box1stHtml += "                     <span>Phone:</span>";
+
+            box1stHtml += "                </label>";
+            box1stHtml += "           </div>";
+            box1stHtml += "             <div>";
+            box1stHtml += "               <label id=\"lblAddress\" for=\"Address\">";
+            box1stHtml += "                    <span>Address:</span>";
+
+            box1stHtml += "               </label>";
+            box1stHtml += "            </div>";
+            $("#div1stBox").html(box1stHtml);
+        }
+        function f2()
+        {
+            $("#lblName").append("");
+        }
+    </script>
+</head>
+<body>
+    <div> 
+        <table width="100%" id="tblFrom" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="33%">
+                    <div style="text-align:center">
+                        <br /><input type="button" name="btnSet1st"  onclick="f1()" id="btnSet1st" value="show 1st Box" /><br /><br />
+                        <input type="button" name="btnSet2nd" id="btnSet2nd" value="show 1st Box text box Show" /><br /><br />
+                        <input type="button" name="btnSet3rd" id="btnSet3rd" value="show 1nd Box text box value Show" /><br /><br />
+                        <input type="button" name="btnSet4th" id="btnSet4th" value="show 2nd Box show" /><br /><br />
+                        <input type="button" name="btnSet5th" id="btnSet5th" value="show ist Box" /><br /><br />
+                    </div>
+                </td>
+                <td width="33%">
+                    <div id="div1stBox">
+                        
+                    </div>
+                </td>
+                <td width="33%">
+                    <div id="2ndBox"></div>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+</body>
+</html>

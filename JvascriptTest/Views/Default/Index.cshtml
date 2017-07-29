@@ -1,0 +1,200 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.1.0.js"></script>
+    <style type="text/css">
+        div {
+            margin: 5px 5px 5px 5px;
+        }
+
+        #forMale, #forFemale {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).on("submit", "#frmJavascrpt", function () {
+            Name = $("#Name").val();
+            Phone = $("#Phone").val();
+            Address = $("#Address").html();
+            if (Name.trim() == "") {
+                alert("Please Enter your Name!")
+                return false;
+            }
+            if (Phone.trim() == "") {
+                alert("Please Enter your Phone!")
+                return false;
+            }
+            if (!$("#Male").prop("checked") && !$("#Female").prop("checked")) {
+                alert("Please Select your gender!")
+                return false;
+            }
+            return true;
+        });
+        $(document).on("click", "#Male", function () {
+            $("#forGeneral").hide();
+            $("#forFemale").hide();
+            $("#forMale").show();
+        });
+        $(document).on("click", "#Female", function () {
+            $("#forGeneral").hide();
+            $("#forMale").hide();
+            $("#forFemale").show();
+        });
+        $(document).on("click", "#btnReset", function () {
+            $("#forGeneral").show();
+            $("#forMale").hide();
+            $("#forFemale").hide();
+        });
+    </script>
+</head>
+<body>
+    <form id="frmJavascrpt" method="post">
+
+        <!--<table width="100%" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="50%">
+                    <div>
+                        <label for="Name">
+                            <span style="width:500px;">Name:</span>
+                            <input type="text" id="Name" name="Name" style="width:40%" />
+                        </label>
+                    </div>
+                </td>
+                <td width="50%">
+                    <div>
+                        <label for="Gender">
+                            <span>Gender:</span>
+                            <label for="Male">
+                                <span>Male</span>
+                                <input type="radio" id="Male" name="Gender" value="Male" />
+                            </label>
+                            <label for="Female">
+                                <span>Female</span>
+                                <input type="radio" id="Female" name="Gender" value="Female" />
+                            </label>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <label for="Phone">
+                            <span>Phone:</span>
+                            <input type="text" id="Phone" name="Phone" style="width:40%" />
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label for="Fevorite">
+                            <span>Fevorite:</span>
+                            <span id="forGeneral">
+                                <select id="Fevorite" name="Fevorite">
+                                    <option value="-1">Select</option>
+                                </select>
+                            </span>
+                            <span id="forMale">
+                                <select id="Fevorite" name="Fevorite">
+                                    <option value="-1">Select</option>
+                                    <option value="asd">asd</option>
+                                    <option value="asdf">asdf</option>
+                                </select>
+                            </span>
+                            <span id="forFemale">
+                                <select id="Fevorite" name="Fevorite">
+                                    <option value="-1">Select</option>
+                                    <option value="zxc">zxc</option>
+                                    <option value="zxcv">zxcv</option>
+                                </select>
+                            </span>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <label for="Address">
+                            <span>Address:</span>
+                            <textarea id="Address" name="Address" cols="5" rows="5" style="width:40%"> </textarea>
+                        </label>
+                    </div>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </table>-->
+
+        <div>
+                <label for="Name">
+                    <span style="width:500px;">Name:</span>
+                    <input type="text" id="Name" name="Name" style="width:40%" />
+                </label>
+            </div>
+            <div>
+                <label for="Phone">
+                    <span>Phone:</span>
+                    <input type="text" id="Phone" name="Phone" />
+                </label>
+            </div>
+            <div>
+                <label for="Address">
+                    <span>Address:</span>
+                    <textarea id="Address" name="Address" cols="5" rows="5"> </textarea>
+                </label>
+            </div>
+            <div>
+                <label for="Gender">
+                    <span>Gender:</span>
+                    <label for="Male">
+                        <span>Male</span>
+                        <input type="radio" id="Male" name="Gender" value="Male" />
+                    </label>
+                    <label for="Female">
+                        <span>Female</span>
+                        <input type="radio" id="Female" name="Gender" value="Female" />
+                    </label>
+                </label>
+            </div>
+            <div>
+                <label for="Fevorite">
+                    <span>Fevorite:</span>
+                    <span id="forGeneral">
+                        <select id="Fevorite" name="Fevorite">
+                            <option value="-1">Select</option>
+                        </select>
+                    </span>
+                    <span id="forMale">
+                        <select id="Fevorite" name="Fevorite">
+                            <option value="-1">Select</option>
+                            <option value="asd">asd</option>
+                            <option value="asdf">asdf</option>
+                        </select>
+                    </span>
+                    <span id="forFemale">
+                        <select id="Fevorite" name="Fevorite">
+                            <option value="-1">Select</option>
+                            <option value="zxc">zxc</option>
+                            <option value="zxcv">zxcv</option>
+                        </select>
+                    </span>
+                </label>
+            </div>
+            <div>
+                <input type="submit" name="btnSubmit" id="btnSubmit" value="Submit" />
+                <input type="reset" name="btnSubmit" id="btnReset" value="Cancle" />
+            </div>
+    </form>
+
+</body>
+</html>
